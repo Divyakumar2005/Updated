@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Departments</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #dff9fb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 32px;
+      color: #05445E;
+    }
+
+    .department-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      width: 80%;
+      max-width: 800px;
+    }
+
+   .dept-card{
+      background: linear-gradient(135deg, #ffffff, #e0f7fa);
+      border: 2px solid #b2ebf2;
+      border-radius: 15px;
+      padding: 30px 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .dept-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .dept-card h2 {
+      font-size: 20px;
+      color: #00796b;
+      margin: 0;
+    }
+
+   
+    .preview-btn {
+      margin-top: 20px;
+      background-color: #007B83;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .preview-btn:hover {
+      background-color: #005f64;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📚 College Departments</h1>
+
+  <div class="department-grid">
+      <a href="{{ url_for('login') }}" class="dept-card"><h2>Computer Science</h2></a>
+      <a href="{{ url_for('login') }}" class="dept-card"><h2>Information Technology</h2></a>
+      <a href="{{ url_for('login') }}" class="dept-card"><h2>Business Administration</h2></a>
+      <a href="{{ url_for('login') }}"  class="dept-card"><h2>Commerce</h2></a>
+  </div>
+
+  <button class="preview-btn">Preview</button>
+
+</body>
+</html>

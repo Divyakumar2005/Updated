@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Table</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      padding: 40px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00796b;
+      font-size: 2em;
+    }
+
+    .table-container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: #00796b;
+      color: white;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f1f8f6;
+    }
+
+    tbody tr:hover {
+      background-color: #e0f2f1;
+    }
+
+    /* Responsive - remove stacking for now */
+    @media screen and (max-width: 768px) {
+      table {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Student Details</h1>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Serialno</th>
+          <th>Student Name</th>
+          <th>Register Number</th>
+          <th>Shift</th>
+          <th>Status</th>
+        </tr>
+        <table>
+          <tbody>
+  {% for student in records %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ student[1] }}</td>
+    <td>{{ student[2] }}</td>
+    <td>{{ student[3] }}</td>
+    <td>{{ student[4] or "N/A" }}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+
+        </table>
+      </thead>
+  
+    </table>
+  </div>
+
+</body>
+</html>
