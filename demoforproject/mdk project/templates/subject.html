@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subject Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #dbe6f6, #c5796d);
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2d3436;
+      font-size: 36px;
+      margin-bottom: 50px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #ffffff, #f0f0f0);
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle at top left, #85d8ce, #085078);
+      top: -70%;
+      left: -70%;
+      z-index: 0;
+      transform: rotate(45deg);
+      transition: all 0.4s ease-in-out;
+      opacity: 0;
+    }
+
+    .card:hover::before {
+      top: 0;
+      left: 0;
+      opacity: 1;
+    }
+
+    .card h2 {
+      position: relative;
+      color: #2c3e50;
+      margin-bottom: 12px;
+      font-size: 22px;
+      z-index: 1;
+    }
+
+    .card p {
+      position: relative;
+      color: #555;
+      font-size: 14px;
+      z-index: 1;
+    }
+
+    .card a {
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    .card:hover a {
+      background-color: #1abc9c;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📚 Select a Subject to Explore</h1>
+
+  <div class="grid-container">
+    <div class="card">
+      <h2>Mathematics</h2>
+      <p>Explore the world of numbers and equations.</p>
+      <a href="/login">Enter</a>
+    </div>
+
+    <div class="card">
+      <h2>Physics</h2>
+      <p>Understand the laws of nature and the universe.</p>
+      <a href="/login">Enter</a>
+    </div>
+
+    <div class="card">
+      <h2>Chemistry</h2>
+      <p>Discover the building blocks of matter.</p>
+      <a href="/login">Enter</a>
+    </div>
+
+    <div class="card">
+      <h2>Computer Science</h2>
+      <p>Dive into algorithms, coding, and logic.</p>
+      <a href="{{url_for('login')}}">Enter</a>
+    </div>
+
+    <div class="card">
+      <h2>Biology</h2>
+      <p>Learn about living organisms and life sciences.</p>
+      <a href="{{url_for('login')}}">Enter</a>
+    </div>
+  </div>
+
+</body>
+</html>
