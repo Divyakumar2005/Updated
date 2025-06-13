@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Records</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #007B83;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007B83;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #007B83;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Attendance Records</h1>
+
+    <table>
+      <thead>
+  <tr>
+    <th>ID</th>
+    <th>Student Name</th> <!-- changed -->
+    <th>Date</th>
+    <th>Status</th>
+  </tr>
+</thead>
+<tbody>
+  {% for row in records %}
+  <tr>
+    <td>{{ row.id }}</td>
+    <td>{{ row.student_name }}</td> <!-- changed -->
+    <td>{{ row.date }}</td>
+    <td>{{ row.status }}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+
+    </table>
+
+    <a href="/" class="back-link">⬅ Back to Home</a>
+  </div>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Report</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 30px auto;
+        }
+        th, td {
+            border: 1px solid #888;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #dcdcdc;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Attendance Report</h2>
+    <table>
+        <tr>
+            <th>Attendance ID</th>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Register No</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        {% for row in records %}
+        <tr>
+            <td>{{ row.attendance_id }}</td>
+            <td>{{ row.student_id }}</td>
+            <td>{{ row.student_name }}</td>
+            <td>{{ row.register_number }}</td>
+            <td>{{ row.date }}</td>
+            <td>{{ row.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html> -->
